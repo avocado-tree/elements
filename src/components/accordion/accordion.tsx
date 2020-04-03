@@ -10,20 +10,24 @@ export class Accordion {
   @Prop()
   open = false;
 
-  @Prop()
+  @Prop({
+    reflect: true
+  })
   name!: string;
 
 
   render() {
     return (
-      <div class="accordion">
-        <div class="header">
-          <span>{name}</span>
+      <Host>
+        <div class="accordion">
+          <div class="header">
+            <span>{this.name}</span>
+          </div>
+          <div>
+            <slot></slot>
+          </div>
         </div>
-        <div>
-          <slot></slot>
-        </div>
-      </div>
+      </Host>
     );
   }
 
