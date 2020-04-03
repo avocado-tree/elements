@@ -10,27 +10,33 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface AcoAnimate {}
+  interface AcoAccordion {
+    'name': string;
+    'open': boolean;
+  }
 }
 
 declare global {
 
 
-  interface HTMLAcoAnimateElement extends Components.AcoAnimate, HTMLStencilElement {}
-  var HTMLAcoAnimateElement: {
-    prototype: HTMLAcoAnimateElement;
-    new (): HTMLAcoAnimateElement;
+  interface HTMLAcoAccordionElement extends Components.AcoAccordion, HTMLStencilElement {}
+  var HTMLAcoAccordionElement: {
+    prototype: HTMLAcoAccordionElement;
+    new (): HTMLAcoAccordionElement;
   };
   interface HTMLElementTagNameMap {
-    'aco-animate': HTMLAcoAnimateElement;
+    'aco-accordion': HTMLAcoAccordionElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface AcoAnimate {}
+  interface AcoAccordion {
+    'name': string;
+    'open'?: boolean;
+  }
 
   interface IntrinsicElements {
-    'aco-animate': AcoAnimate;
+    'aco-accordion': AcoAccordion;
   }
 }
 
@@ -40,7 +46,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'aco-animate': LocalJSX.AcoAnimate & JSXBase.HTMLAttributes<HTMLAcoAnimateElement>;
+      'aco-accordion': LocalJSX.AcoAccordion & JSXBase.HTMLAttributes<HTMLAcoAccordionElement>;
     }
   }
 }
