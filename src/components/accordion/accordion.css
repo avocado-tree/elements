@@ -2,3 +2,47 @@
   display: block;
   color: var(--aco-primary-color);
 }
+
+.accordion {
+  width: 100%;
+}
+
+.header {
+  padding: 10px;
+  color: black;
+  background: white;
+  border: 1px solid black;
+  border-radius: 0.125rem;
+  cursor: pointer;
+}
+
+.header .angle {
+  display: inline-block;
+  transition: all 200ms ease-in-out;
+  margin-right: 10px;
+}
+
+.header.active,
+.header:hover {
+  background-color: lightblue;
+}
+
+.header.active .angle {
+  transform: rotate(90deg);
+}
+
+.content {
+  width: 100%;
+}
+
+.content.show {
+  max-height: 400px;
+  opacity: 1;
+  transition: all 0.5s ease-in;
+}
+
+.content.hide {
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.5s ease-out;
+}
