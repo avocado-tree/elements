@@ -14,5 +14,12 @@
 */
 
 :root {
-    --aco-primary-color: #488aff;
+    --aco-primary-color: rgba(0,0,0,.03);
+    --aco-primary-color-dark: rgba(0,0,0,.125);;
+    --aco-secondary-color: #ffffff;
+    --aco-text-color: rgb(20, 17, 17);
+    --aco-background-color: #a7c7ff;
+    --aco-border-radius: 4px;
+    --aco-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --aco-padding: .75rem 1.25rem;
 }
