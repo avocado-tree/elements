@@ -1,30 +1,36 @@
-:host {
-  display: block;
-  color: var(--aco-primary-color);
-}
-
 .accordion {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--aco-font-family);
+  border: 1px solid var(--aco-primary-color-dark);
+  border-radius: var(--aco-border-radius);
+  overflow: hidden;
 }
 
 .header {
-  padding: 10px;
-  color: black;
-  background: white;
-  border: 1px solid black;
-  border-radius: 0.125rem;
+  background-color: var(--aco-primary-color);
+  color: var(--aco-text-color);
+  padding: var(--aco-padding);
+  border-bottom: 0;
+  outline: none;
+  text-align: start;
   cursor: pointer;
+  font-size: 1.25em;
+}
+
+.angle polyline {
+  stroke: var(--aco-text-color);
+  stroke-width: 10;
 }
 
 .header .angle {
-  display: inline-block;
   transition: all 200ms ease-in-out;
   margin-right: 10px;
+  vertical-align: .15em;
 }
 
-.header.active,
-.header:hover {
-  background-color: lightblue;
+.header.active {
+  border-bottom: 1px solid var(--aco-primary-color-dark);
 }
 
 .header.active .angle {
@@ -32,7 +38,10 @@
 }
 
 .content {
-  width: 100%;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: var(--aco-padding);
+  background-color: var(--aco-secondary-color);
 }
 
 .content.show {
@@ -44,5 +53,6 @@
 .content.hide {
   opacity: 0;
   max-height: 0;
-  transition: all 0.5s ease-out;
+  padding: 0;
+  transition: all 0.25s ease-out;
 }
