@@ -1,37 +1,46 @@
-import { Component, Host, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State } from "@stencil/core";
 
 @Component({
-  tag: 'aco-accordion',
-  styleUrl: 'accordion.css',
-  shadow: true
+  tag: "aco-accordion",
+  styleUrl: "accordion.css",
+  shadow: true,
 })
 export class Accordion {
-
   @Prop({
-    reflect: true
+    reflect: true,
   })
-  name!: string;
+  title!: string;
 
-  @State() 
-  isActive = false
-  
+  @State()
+  isActive: boolean;
 
-
+  handleClick() {
+    this.isActive = !this.isActive;
+  }
 
   render() {
     return (
-      <Host>
-        <div class="accordion">
-          <div class={this.isActive ? 'header active': 'header'} onClick={ () => this.isActive = !this.isActive}>
-            <span class="angle">˃</span>
-            <span>{this.name}</span>
-          </div>
-          <div class={this.isActive ? 'content show': 'content hide'}>
-            <slot></slot>
-          </div>
+      <div class="accordion">
+        <div
+          class={this.isActive ? "header active" : "header"}
+          onClick={() => this.handleClick()}
+        >
+          <svg class="angle" width="10px" height="10px" viewBox="0 0 50 80">
+            <polyline
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              points="0.375,0.375 45.63,38.087 0.375,75.8 "
+            />
+          </svg>
+          <span>{this.title}</span>
+        </div >
+
+        <div class={this.isActive ? "content show" : "content hide"}>
+          <slot></slot>
         </div>
-      </Host>
+      
+      </div>
     );
   }
-
 }

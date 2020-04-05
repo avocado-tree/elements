@@ -11,7 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface AcoAccordion {
-    'name': string;
+    'title': string;
   }
 }
 
@@ -30,7 +30,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface AcoAccordion {
-    'name': string;
+    'title': string;
   }
 
   interface IntrinsicElements {
