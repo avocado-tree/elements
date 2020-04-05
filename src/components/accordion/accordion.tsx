@@ -9,7 +9,7 @@ export class Accordion {
   @Prop({
     reflect: true,
   })
-  title!: string;
+  headline!: string;
 
   @State()
   isActive: boolean;
@@ -33,7 +33,7 @@ export class Accordion {
               points="0.375,0.375 45.63,38.087 0.375,75.8 "
             />
           </svg>
-          <span>{this.title}</span>
+          <span>{this.headline}</span>
         </div >
 
         <div class={this.isActive ? "content show" : "content hide"}>
